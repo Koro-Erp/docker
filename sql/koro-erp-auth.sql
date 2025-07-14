@@ -292,7 +292,7 @@ CREATE TABLE public.users (
     id_type_id integer,
     first_name character varying(100),
     last_name character varying(100),
-    id uuid DEFAULT gen_random_uuid() NOT NULL
+    id uuid DEFAULT public.gen_random_uuid() NOT NULL
 );
 
 
