@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+    gateway:
+        image : korobosta/koro-erp-auth
+        # build : ../gateway
+        env_file:
+            - ../gateway/.env
+            - ../gateway/.env.docker
+        ports:
+            - "7009:7009"
+    hrm:
+        image : korobosta/koro-erp-hrm
+        # build : ./hrm
+        env_file:
+            - ../hrm/.env
+            - ../hrm/.env.docker
+        ports:
+            - "7001:7001"
+
+    logs:
+        image : korobosta/koro-erp-logs
+        # build : ./logs
+        env_file:
+            - ../logs/.env
+            - ../logs/.env.docker
+        ports:
+            - "7010:7010"
+        volumes:
+          - "../logs/logs:/root/logs"
+
+    auth:
+        image : korobosta/koro-erp-auth
+        # build : ./auth
+        env_file:
+            - ../auth/.env
+            - ../auth/.env.docker
+        ports:
+            - "7000:7000"
