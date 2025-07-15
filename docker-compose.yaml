@@ -4,24 +4,24 @@ services:
   gateway:
     image: korobosta/koro-erp-gateway
     env_file:
-      - ../gateway/.env
-      - ../gateway/.env.docker
+      - ./config/.env
+      - ./config/.env.gateway
     ports:
       - "7009:7009"
 
   hrm:
     image: korobosta/koro-erp-hrm
     env_file:
-      - ../hrm/.env
-      - ../hrm/.env.docker
+      - ./config/.env
+      - ./config/.env.hrm
     ports:
       - "7001:7001"
 
   logs:
     image: korobosta/koro-erp-logs
     env_file:
-      - ../logs/.env
-      - ../logs/.env.docker
+      - ./config/.env
+      - ./config/.env.logs
     ports:
       - "7010:7010"
     volumes:
@@ -30,7 +30,7 @@ services:
   auth:
     image: korobosta/koro-erp-auth
     env_file:
-      - ../auth/.env
-      - ../auth/.env.docker
+      - ./config/.env
+      - ./config/.env.aut
     ports:
       - "7000:7000"
