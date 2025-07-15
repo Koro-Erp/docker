@@ -31,6 +31,6 @@ services:
     image: korobosta/koro-erp-auth
     env_file:
       - ./config/.env
-      - ./config/.env.aut
+      - ./config/.env.auth
     ports:
       - "7000:7000"
