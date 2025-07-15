@@ -8,6 +8,7 @@ services:
       - ./config/.env.gateway
     ports:
       - "7009:7009"
+      - "80:7009"
 
   hrm:
     image: korobosta/koro-erp-hrm
